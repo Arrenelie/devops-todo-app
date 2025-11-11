@@ -1,0 +1,70 @@
+name: Debug Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  debug-structure:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Show exact file structure
+      run: |
+        echo "=== CURRENT DIRECTORY ==="
+        pwd
+        echo ""
+        
+        echo "=== FULL PROJECT STRUCTURE ==="
+        find . -type f -name "*.py" -o -name "*.html" -o -name "*.js" -o -name "*.yml" -o -name "Dockerfile" -o -name "*.txt" -o -name "*.conf" | sort
+        echo ""
+        
+        echo "=== ALL FILES AND FOLDERS ==="
+        ls -la
+        echo ""
+        
+        echo "=== CHECK BACKEND FOLDER ==="
+        if [ -d "backend" ]; then
+          echo "✅ backend folder exists"
+          ls -la backend/
+        else
+          echo "❌ backend folder NOT found"
+          echo "Available folders:"
+          ls -d */
+        fi
+        echo ""
+        
+        echo "=== CHECK FRONTEND FOLDER ==="
+        if [ -d "frontend" ]; then
+          echo "✅ frontend folder exists"
+          ls -la frontend/
+        else
+          echo "❌ frontend folder NOT found"
+        fi
+
+  simple-test:
+    runs-on: ubuntu-latest
+    needs: debug-structure
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Test from root directory
+      run: |
+        echo "=== Testing from root ==="
+        python --version
+        
+        # Проверяем файлы с абсолютными путями
+        if [ -f "backend/main.py" ]; then
+          echo "✅ backend/main.py exists"
+          python backend/main.py --help 2>/dev/null || echo "Main.py executed"
+        else
+          echo "❌ backend/main.py not found"
+        fi
+        
+        if [ -f "backend/requirements.txt" ]; then
+          echo "✅ backend/requirements.txt exists"
+          cat backend/requirements.txt
+        fi
