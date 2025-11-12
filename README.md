@@ -52,22 +52,22 @@
 
 ## 🏗️ Архитектура проекта
 devops-todo-app/
-├── backend/ # FastAPI приложение
-│ ├── main.py # Основной файл приложения
-│ ├── test_main.py # Модульные тесты
-│ ├── check_code_quality.py # Проверки качества кода
-│ ├── requirements.txt # Python зависимости
-│ └── Dockerfile # Конфигурация Docker
-├── frontend/ # Vue.js приложение
-│ ├── index.html # Основная HTML страница
-│ ├── app.js # JavaScript логика
-│ ├── style.css # Стили Bootstrap
-│ ├── nginx.conf # Конфигурация Nginx
-│ └── Dockerfile # Конфигурация Docker
-├── .github/workflows/ # CI/CD пайплайны
-│ └── ci.yml # Основной workflow
-├── docker-compose.yml # Конфигурация Docker Compose
-└── README.md # Документация
+├── backend/ FastAPI приложение
+│ ├── main.py Основной файл приложения
+│ ├── test_main.py Модульные тесты
+│ ├── check_code_quality.py Проверки качества кода
+│ ├── requirements.txt Python зависимости
+│ └── Dockerfile Конфигурация Docker
+├── frontend/ Vue.js приложение
+│ ├── index.html Основная HTML страница
+│ ├── app.js JavaScript логика
+│ ├── style.css Стили Bootstrap
+│ ├── nginx.conf Конфигурация Nginx
+│ └── Dockerfile Конфигурация Docker
+├── .github/workflows/ CI/CD пайплайны
+│ └── ci.yml Основной workflow
+├── docker-compose.yml Конфигурация Docker Compose
+└── README.md Документация
 
 ### 🚀 Быстрый старт
 ## Локальный запуск с Docker
@@ -153,7 +153,7 @@ Docker Compose
 
 Валидация ответов сервера
 
-### 🎯 Особенности реализации
+### Особенности реализации
 #Backend
 Асинхронные endpoints для лучшей производительности
 
@@ -203,6 +203,9 @@ CI/CD пайплайн
 Добавление аутентификации
 
 Масштабирование базы данных
+
+# Этот проект создан для демонстрации DevOps навыков и может использоваться в образовательных целях.
+
 
 
 
