@@ -30,20 +30,20 @@
 
 ## 🛠️ Технологический стек
 
-### Backend
+# Backend
 - **Python 3.11** - основной язык разработки
 - **FastAPI** - современный ASGI фреймворк
 - **SQLite** - база данных
 - **Pydantic** - валидация данных
 - **Uvicorn** - ASGI сервер
 
-### Frontend  
+# Frontend  
 - **Vue.js 3** - прогрессивный JavaScript фреймворк
 - **Bootstrap 5** - CSS фреймворк
 - **Font Awesome** - иконки
 - **Native JavaScript** - работа с API
 
-### DevOps & Infrastructure
+# DevOps & Infrastructure
 - **Docker** - контейнеризация приложения
 - **Docker Compose** - оркестрация сервисов
 - **GitHub Actions** - CI/CD автоматизация
@@ -78,12 +78,12 @@ cd devops-todo-app
 # Запустить приложение
 docker-compose up --build
 
-# Приложение будет доступно по адресам:
-# Frontend: http://localhost
-# Backend API: http://localhost:8000
-# API Documentation: http://localhost:8000/docs
+### Приложение будет доступно по адресам:
+### Frontend: http://localhost
+### Backend API: http://localhost:8000
+### API Documentation: http://localhost:8000/docs
 ### Локальный запуск без Docker
-# Backend
+### Backend
 cd backend
 pip install -r requirements.txt
 python main.py
@@ -203,4 +203,5 @@ CI/CD пайплайн
 Добавление аутентификации
 
 Масштабирование базы данных
+
 
